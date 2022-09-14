@@ -1,4 +1,15 @@
 # 602277107 박은수
+## `[9월14일]`
+### 1. 작업 폴더 설정하기
+```
+C:\Program Files\R\R-4.2.1\bin\x64 경로 복사
+visual studio code 에서 좌측 확장 아이콘 클릭후 R 검색해서 다운로드
+visual studio code에서 좌측 하단 설정 -> 설정 -> 확장 -> R -> Rpath:window -> 복사한 경로 입력
+```
+* C:\r_project 폴더 생성
+* 파일 내 data_coll.R 파일 생성
+* visual studio code 와 연동됨
+
 ## `[9월7일]`
 ### 1. api 인증키 얻기
 ```
