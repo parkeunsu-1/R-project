@@ -7,7 +7,7 @@
 2. rm(변수명) -> 해당 변수명 삭제
 3. rm(list=ls()) -> 모든 변수 삭제
 ```
-### 2. 작업디렉토리 확인
+### 2. getwd()
 * 콘솔에서 getwd() -> 현재 작업디렉토리 확인가능
 ### 3. 작업디렉토리 변경하는법
 * R > session > set working directory > choose directory > 경로 지정
