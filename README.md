@@ -7,12 +7,19 @@
 2. rm(변수명) -> 해당 변수명 삭제
 3. rm(list=ls()) -> 모든 변수 삭제
 ```
-### 2. getwd()
+### 2. 콘솔
 * 콘솔에서 getwd() -> 현재 작업디렉토리 확인가능
-### 3. 작업디렉토리 변경하는법
-* R > session > set working directory > choose directory > 경로 지정
-### 4. Source with Echo
-* 코드와 코드 결과가 같이 출력됨
+* R > session > set working directory > choose directory > 작업디렉토리 경로 지정
+* Source with Echo -> 코드와 코드 결과가 같이 출력됨
+
+### 3. paste()
+```
+paste(1,2,3,4,5) -> 1 2 3 4 5 출력
+paste('function','in','r') -> function in r 출력
+test <- c(1,2,3,4,5) 
+paste(test) -> '1','2','3','4','5' 출력
+```
+> 분리되어있으면 하나로 연결하고, 묶여있으면 분리시킨다.
 
 ## `[9월14일]`
 ### 1. 작업 폴더 설정하기
