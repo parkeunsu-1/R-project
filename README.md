@@ -1,4 +1,40 @@
 # 602277107 박은수
+## `[9월28일]`
+### 1. 자료 요청하고 응답받기
+```
+for(i in 1:length(url_list)){   # 요청목록(url_list) 반복
+  raw_data[[i]] <- xmlTreeParse(url_list[i], useInternalNodes = TRUE,encoding = "utf-8") # 결과 저장
+  root_Node[[i]] <- xmlRoot(raw_data[[i]])	# xmlRoot로 추출
+```
+
+### 2. 전체 거래 건수 확인하기
+```  
+items <- root_Node[[i]][[2]][['items']]  # 전체 거래내역(items) 추출
+size <- xmlSize(items)                   # 전체 거래 건수 확인 
+```
+### 3. 개별 거래 내역 추출하기
+```
+  item <- list()  # 전체 거래내역(items) 저장 임시 리스트 생성
+  item_temp_dt <- data.table()  # 세부 거래내역(item) 저장 임시 테이블 생성
+  Sys.sleep(.1)  # 0.1초 멈춤
+  for(m in 1:size){  # 전체 거래건수(size)만큼 반복
+    #---# 세부 거래내역 분리   
+    item_temp <- xmlSApply(items[[m]],xmlValue)
+    item_temp_dt <- data.table(year = item_temp[4],     # 거래 년 
+                               month = item_temp[7],    # 거래 월
+                               day = item_temp[8],      # 거래 일
+                               price = item_temp[1],    # 거래금액
+                               code = item_temp[12],    # 지역코드
+                               dong_nm = item_temp[5],  # 법정동
+                               jibun = item_temp[11],   # 지번
+                               con_year = item_temp[3], # 건축연도 
+                               apt_nm = item_temp[6],   # 아파트 이름   
+                               area = item_temp[9],     # 전용면적
+                               floor = item_temp[13])   # 층수 
+    item[[m]] <- item_temp_dt}    # 분리된 거래내역 순서대로 저장
+  apt_bind <- rbindlist(item)     # 통합 저장
+```
+
 ## `[9월21일]`
 ### 1. 변수 지우기
 ```
