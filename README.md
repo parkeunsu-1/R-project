@@ -23,8 +23,8 @@ write.csv(apt_price, "./03_integrated/03_apt_price.csv")
 > 4. table(is.na(apt_price) - 결측값 확인
 
 ### 4. 문자열 공백 처리
-* library(stringr) -> 문자열 처리 패키지
-* apt_price <- as.data.frame(apply(apt_price, 2, str_trim)) -> 공백제거( 1이면 행, 2면 열에 적용)(str_trim은 함수)
+> 1. library(stringr) -> 문자열 처리 패키지
+> 2. apt_price <- as.data.frame(apply(apt_price, 2, str_trim)) -> 공백제거( 1이면 행, 2면 열에 적용)(str_trim은 함수)
 
 ## `[9월28일]`
 ### 1. 자료 요청하고 응답받기
