@@ -26,6 +26,10 @@ write.csv(apt_price, "./03_integrated/03_apt_price.csv")
 > 1. library(stringr) -> 문자열 처리 패키지
 > 2. apt_price <- as.data.frame(apply(apt_price, 2, str_trim)) -> 공백제거( 1이면 행, 2면 열에 적용)(str_trim은 함수)
 
+### 5. 데이터 변환
+> 1. sub(",","",.) -> 쉼표 제거
+> 2. as.numeric() -> 문자를 숫자로 변환
+
 ## `[9월28일]`
 ### 1. 자료 요청하고 응답받기
 ```
