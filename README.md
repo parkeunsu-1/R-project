@@ -15,6 +15,11 @@ write.csv(apt_price, "./03_integrated/03_apt_price.csv")
 -> save와 write.csv로 RDATA와 CSV 형식으로 저장
 -> RDATA 형식은 R에서 데이터를 저장하거나 관리하기에는 편리하고 효율적이지만 엑셀등 다른 프로그램에서 내용을 보기 어려워 CSV 형식으로도 저장하여 중간에 내용을 쉽게 확인할수있습니다.
 ```
+
+### 3. 수집한 데이터 불러오기
+* options(warn=-1) -> 경고 메시지 무시
+* taable(is.na(apt_price)) -> 결측값 False, True 로 확인가능 -> True 가 결측값(NA) 갯수
+
 ## `[9월28일]`
 ### 1. 자료 요청하고 응답받기
 ```
