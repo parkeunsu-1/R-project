@@ -1,4 +1,20 @@
 # 602277107 박은수
+## `[10월05일]`
+### 1. 데이터 100건으로 수정
+```
+datelist <- seq(from = as.Date('2021-01-01'), # 시작
+                to   = as.Date('2021-04-30'), # 종료 100개
+                by    = '1 month')
+```
+### 2. 통합데이터 저장하기
+```
+dir.create("./03_integrated")   # 새로운 폴더 생성
+save(apt_price, file = "./03_integrated/03_apt_price.rdata") # 저장
+write.csv(apt_price, "./03_integrated/03_apt_price.csv") 
+
+-> save와 write.csv로 RDATA와 CSV 형식으로 저장
+-> RDATA 형식은 R에서 데이터를 저장하거나 관리하기에는 편리하고 효율적이지만 엑셀등 다른 프로그램에서 내용을 보기 어려워 CSV 형식으로도 저장하여 중간에 내용을 쉽게 확인할수있습니다.
+```
 ## `[9월28일]`
 ### 1. 자료 요청하고 응답받기
 ```
