@@ -17,10 +17,10 @@ write.csv(apt_price, "./03_integrated/03_apt_price.csv")
 ```
 
 ### 3. 수집한 데이터 불러오기
-> options(warn=-1) -경고 메시지 무시
-> table(is.na(apt_price)) - 결측값 False, True 로 확인가능 - True 가 결측값(NA) 갯수
->  apt_price <- na.omit(apt_price) - 결측값 제거
->  table(is.na(apt_price) - 결측값 확인
+> 1. options(warn=-1) -경고 메시지 무시
+2. table(is.na(apt_price)) - 결측값 False, True 로 확인가능 - True 가 결측값(NA) 갯수
+3. apt_price <- na.omit(apt_price) - 결측값 제거
+4. table(is.na(apt_price) - 결측값 확인
 ## `[9월28일]`
 ### 1. 자료 요청하고 응답받기
 ```
