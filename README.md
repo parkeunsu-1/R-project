@@ -15,6 +15,18 @@ dir.create("./04_preprocess")   # 새로운 폴더 생성
 save(apt_price, file = "./04_preprocess/04_preprocess.rdata") # 저장
 write.csv(apt_price, "./04_preprocess/04_preprocess.csv") 
 ```
+
+### 3. 지오코딩 준비하기
+> 지오 코딩이란 ? 문자로 된 주소를 위도와 경도라는 숫자로 변환
+> 카카오맵 API
+> REST API 방식으로 이용
+```
+1. 카카오 개발자 사이트(developers.kakao.com) 에서 카카오 계정으로 로그인
+2. 내 애플리케이션 클릭
+3. 애플리케이션 추가하기 앱이름, 사업자명 입력후 저장
+4. REST API 키 발급
+```
+
 ## `[10월05일]`
 ### 1. 데이터 100건으로 수정
 ```
