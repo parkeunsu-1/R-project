@@ -1,4 +1,20 @@
 # 602277107 박은수
+
+## `[10월12일]`
+### 1. 필요한 칼럼만 추출하기
+```
+apt_price <- apt_price %>% select(ymd, ym, year, code, addr_1, apt_nm, 
+                                  juso_jibun, price, con_year,  area, floor, py, cnt) # 칼럼 추출
+head(apt_price, 2)  # 확인
+```
+
+### 2. 전처리 데이터 저장하기
+```
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+dir.create("./04_preprocess")   # 새로운 폴더 생성
+save(apt_price, file = "./04_preprocess/04_preprocess.rdata") # 저장
+write.csv(apt_price, "./04_preprocess/04_preprocess.csv") 
+```
 ## `[10월05일]`
 ### 1. 데이터 100건으로 수정
 ```
