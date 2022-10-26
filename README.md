@@ -22,7 +22,14 @@ apt_price <- left_join(apt_price, juso_geocoding,
                        by = c("juso_jibun" = "apt_juso")) # 결합
 apt_price <- na.omit(apt_price)   # 결측치 제거
 ```
-
+### 5. 지오 프레임 생성하기
+```
+library(sp)    # install.packages('sp')
+coordinates(apt_price) <- ~coord_x + coord_y    # 좌표값 할당
+proj4string(apt_price) <- "+proj=longlat +datum=WGS84 +no_defs" # 좌표계(CRS) 정의
+library(sf)    # install.packages('sf')
+apt_price <- st_as_sf(apt_price)     # sp형 => sf형 변환
+```
 
 ## `[10월12일]`
 ### 1. 필요한 칼럼만 추출하기
