@@ -14,6 +14,14 @@
   load("./04_preprocess/04_preprocess.rdata")    # 주소 불러오기
   load("./05_geocoding/05_juso_geocoding.rdata") # 좌표 불러오기
 ```
+### 4. 주소와 좌표 결합하기
+```
+
+library(dplyr)   # install.packages('dplyr')
+apt_price <- left_join(apt_price, juso_geocoding, 
+                       by = c("juso_jibun" = "apt_juso")) # 결합
+apt_price <- na.omit(apt_price)   # 결측치 제거
+```
 
 
 ## `[10월12일]`
