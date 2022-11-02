@@ -1,4 +1,34 @@
 # 602277107 박은수
+## `[11월02일]`
+### 1. 지역별 평균 가격 구하기
+```
+setwd(dirname(rstudioapi::getSourceEditorContext()$path)) # 작업폴더 설정
+load("./06_geodataframe/06_apt_price.rdata")   # 실거래 불러오기
+library(sf)    # install.packages("sf") 
+grid <- st_read("./sigun_grid/seoul.shp")     # 서울시 1km 그리드 불러오기
+apt_price <-st_join(apt_price, grid, join = st_intersects)  # 실거래 + 그리드 결합
+head(apt_price,2)
+
+
+kde_high <- aggregate(apt_price$py, by=list(apt_price$ID), mean) # 그리드별 평균가격(평당) 계산
+colnames(kde_high) <- c("ID", "avg_price")   # 컬럼명 변경
+head(kde_high, 2)     # 확인
+
+```
+### 2. 평균 가격 정보 표시하기
+> merge() 함수를 이용해 공간 결합 한다. 그러면 kde_high에 서울 시 지역코드(1100)을 나타내는 SIG_CD 와 그리드별 공간정보인 geometry 데이터가 추가됨
+
+### 3. 지도 경계 그리기
+> 데이터가 집중된 곳 찾기 -> 커널 밀도 추정 이용 
+
+### 4. 밀도 그래프 표시하기
+```
+커널 밀도 추정할때는 지도 경계선(win) 내의 포인트 분포 데이터로 커널 밀도를 계산해야한다.
+pop() 함수는 위도와 경도(x, y)를 포인트로 변환
+평당 평균가를 가중치 옵션으로 설정
+```
+
+
 ## `[10월26일]`
 ### 1. 좌표계란?
 > 지오 코딩으로 평면의 지도 위에 위치를 표현할수 있는 위경도 정보를 수집하였으나, 우리가 살아가는 지구는 불규칙한 타원체라 실제 좌표값을 표현하려면 
